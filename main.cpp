@@ -7,18 +7,14 @@ void showMenu() {
     cout << "3. Quit " << endl;
 }
 
-int selection() {
+int getSelection() {
     cout << "Enter Selection: " << endl;
     int input;
     cin >> input;
 
     return input;
 }
-
-int main() {
-
-    showMenu();
-    int input = selection();
+int getUserInput(int input){
     switch (input) {
         case 1:
             cout << "Searching..." << endl;
@@ -31,6 +27,14 @@ int main() {
             break;
         default:
             cout << "Please select an item from the menu." << endl;
+            return input;
     }
+}
+
+int main() {
+
+    showMenu();
+    int input = getSelection();
+    getUserInput(input);
     return 0;
 }
